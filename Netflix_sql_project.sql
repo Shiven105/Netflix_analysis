@@ -103,13 +103,11 @@ COUNT(show_id) AS total_content
 FROM netflix
 GROUP BY 1 
 
-
---Q10 Find the average release year for content produced in a specific country
--- Q11 List all movies that are documentaries
+-- Q10 List all movies that are documentaries
 SELECT * FROM netflix
 WHERE listed_in ILIKE '%Documentaries%';
 
--- Q12 Find all content without director
+-- Q11 Find all content without director
 SELECT * 
 FROM netflix
 WHERE director IS NULL
@@ -132,9 +130,8 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 10;
 
--- Q14
-
-
+-- Q14 Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. label
+--the content containig these words as 'bad' and all other as 'good'. count how many items in each category
 
 WITH new_table
 AS
